@@ -1,20 +1,153 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+
+
+<button type="button" class="btn btn-primary waves-light" (click)="formRegistration.show()" mdbWavesEffect>Register form</button>
+<!--Modal: Register Form-->
+<div mdbModal #formRegistration="mdb-modal" class="modal fade" id="modalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog cascading-modal" role="document">
+      <!--Content-->
+      <div class="modal-content">
+
+          <!--Header-->
+          <div class="modal-header light-blue darken-3 white-text">
+              <h4 class="title"><i class="fa fa-user-plus"></i> Register</h4>
+              <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="formRegistration.hide()">
+                  <span aria-hidden="true">×</span>
+              </button>
+          </div>
+          <!--Body-->
+          <div class="modal-body">
+              <div class="md-form form-sm">
+                  <i class="fa fa-envelope prefix"></i>
+                  <input mdbInputDirective data-error="wrong email" data-success="valid email"
+                    minLength="8" maxLength="25" type="email" id="form32" name="email" class="form-control">
+                  <label for="form32">Your email</label>
+              </div>
+
+              <div class="md-form form-sm">
+                  <i class="fa fa-lock prefix"></i>
+                  <input mdbInputDirective type="password" id="form33" class="form-control">
+                  <label for="form33">Your password</label>
+              </div>
+
+              <div class="md-form form-sm">
+                  <i class="fa fa-lock prefix"></i>
+                  <input mdbInputDirective type="password" id="form34" class="form-control">
+                  <label for="form34">Repeat password</label>
+              </div>
+
+              <div class="text-center mt-2">
+                  <button class="btn btn-info waves-light" mdbWavesEffect>Sign up <i class="fa fa-sign-in ml-1"></i></button>
+              </div>
+
+          </div>
+          <!--Footer-->
+          <div class="modal-footer">
+              <div class="options text-center text-md-right mt-1">
+                  <p>Already have an account? <a href="#">Log In</a></p>
+              </div>
+              <button type="button" class="btn btn-outline-info ml-auto" data-dismiss="modal" (click)="formRegistration.hide()" mdbWavesEffect>Close</button>
+          </div>
+      </div>
+      <!--/.Content-->
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!--Modal: Register Form-->
+
+<button type="button" class="btn btn-primary waves-light" (click)="formLogin.show()" mdbWavesEffect>Login form</button>
+<!--Modal: Login Form-->
+<div mdbModal #formLogin="mdb-modal" class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog cascading-modal" role="document">
+      <!--Content-->
+      <div class="modal-content">
+
+          <!--Header-->
+          <div class="modal-header light-blue darken-3 white-text">
+              <h4 class="title"><i class="fa fa-user"></i> Log in</h4>
+              <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="formLogin.hide()">
+                  <span aria-hidden="true">×</span>
+              </button>
+          </div>
+          <!--Body-->
+          <div class="modal-body">
+              <div class="md-form form-sm">
+                  <i class="fa fa-envelope prefix"></i>
+                  <input mdbInputDirective type="text" id="form30" class="form-control">
+                  <label for="form30">Your email</label>
+              </div>
+
+              <div class="md-form form-sm">
+                  <i class="fa fa-lock prefix"></i>
+                  <input mdbInputDirective type="password" id="form31" class="form-control">
+                  <label for="form31">Your password</label>
+              </div>
+
+              <div class="text-center mt-2">
+                  <button class="btn btn-info waves-light" mdbWavesEffect>Log in <i class="fa fa-sign-in ml-1"></i></button>
+              </div>
+
+          </div>
+          <!--Footer-->
+          <div class="modal-footer">
+              <div class="options text-center text-md-right mt-1">
+                  <p>Not a member? <a href="#">Sign Up</a></p>
+                  <p>Forgot <a href="#">Password?</a></p>
+              </div>
+              <button type="button" class="btn btn-outline-info ml-auto" data-dismiss="modal" (click)="formLogin.hide()" mdbWavesEffect>Close</button>
+          </div>
+      </div>
+      <!--/.Content-->
+  </div>
+</div>
+<!--Modal: Login Form-->
+
+<button type="button" class="btn btn-primary waves-light" (click)="formContact.show()" mdbWavesEffect>Contact form</button>
+<!--Modal: Contact form-->
+<div mdbModal #formContact="mdb-modal" class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog cascading-modal" role="document">
+      <!--Content-->
+      <div class="modal-content">
+
+          <!--Header-->
+          <div class="modal-header light-blue darken-3 white-text">
+              <h4 class="title"><i class="fa fa-pencil"></i> Contact form</h4>
+              <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="formContact.hide()">
+                  <span aria-hidden="true">×</span>
+              </button>
+          </div>
+          <!--Body-->
+          <div class="modal-body mb-0">
+              <div class="md-form form-sm">
+                  <i class="fa fa-envelope prefix"></i>
+                  <input mdbInputDirective type="text" id="form19" class="form-control">
+                  <label for="form19">Your name</label>
+              </div>
+
+              <div class="md-form form-sm">
+                  <i class="fa fa-lock prefix"></i>
+                  <input mdbInputDirective type="password" id="form20" class="form-control">
+                  <label for="form20">Your email</label>
+              </div>
+
+              <div class="md-form form-sm">
+                  <i class="fa fa-tag prefix"></i>
+                  <input mdbInputDirective type="text" id="form21" class="form-control">
+                  <label for="form21">Subject</label>
+              </div>
+
+              <div class="md-form form-sm">
+                  <i class="fa fa-pencil prefix"></i>
+                  <textarea mdbInputDirective type="text" id="form8" class="md-textarea mb-0"></textarea>
+                  <label for="form8">Your message</label>
+              </div>
+
+              <div class="text-center mt-1-half">
+                  <button class="btn btn-info mb-2 waves-light" mdbWavesEffect>Send <i class="fa fa-send ml-1"></i></button>
+              </div>
+
+          </div>
+      </div>
+      <!--/.Content-->
+  </div>
+</div>
+<!--Modal: Contact form-->
 
